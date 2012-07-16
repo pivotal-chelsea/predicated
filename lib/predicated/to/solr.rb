@@ -7,8 +7,8 @@ module Predicated
   class Not; def to_solr; "NOT(#{inner.to_solr})" end end
   
   class Equal;                def to_solr; "#{left}:#{right}" end end
-  class GreaterThan;          def to_solr; "#{left}:[#{(right+1)} TO *]" end end
-  class LessThan;             def to_solr; "#{left}:[* TO #{(right-1)}]" end end  
+  class GreaterThan;          def to_solr; "#{left}:[#{(right.to_i+1)} TO *]" end end
+  class LessThan;             def to_solr; "#{left}:[* TO #{(right.to_i-1)}]" end end
   class GreaterThanOrEqualTo; def to_solr; "#{left}:[#{right} TO *]" end end
   class LessThanOrEqualTo;    def to_solr; "#{left}:[* TO #{right}]" end end
   

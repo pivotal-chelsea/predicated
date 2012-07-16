@@ -32,7 +32,7 @@ regarding "convert a predicate to a solr query" do
     }
   }
   
-  create_canonical_tests(@to_expectations) do |predicate|
+  create_canonical_tests(@to_expectations, false) do |predicate|
     predicate.to_solr
   end
 
